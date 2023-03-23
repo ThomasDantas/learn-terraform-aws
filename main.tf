@@ -1,9 +1,9 @@
-data "aws_availability_zones" "available" {}
-
 provider "aws" {
   region  = var.region
   profile = "default"
 }
+
+data "aws_availability_zones" "available" {}
 
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
@@ -61,14 +61,14 @@ resource "aws_db_parameter_group" "terraform-parameter-group" {
 }
 
 resource "aws_db_instance" "terraformdb" {
-  identifier             = "terraform-db"
+  identifier             = "terraformdb"
   engine                 = "postgres"
   engine_version         = "14.1"
-  db_name                = "mydb-${var.environment}"
+  db_name                = "mydb${var.environment}"
   username               = "foo"
   password               = var.db_password # export TF_VAR_db_password="mypassword"
   instance_class         = "db.t3.micro"
-  allocated_storage      = "15"
+  allocated_storage      = 5
   apply_immediately      = true
   backup_window          = "09:00-12:00"
   db_subnet_group_name   = aws_db_subnet_group.terraform-subnet.name

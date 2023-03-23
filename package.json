@@ -1,0 +1,11 @@
+{
+  "name": "learn-terraform",
+  "description": "Learning Terraform",
+  "authors": "ThomasDantas",
+  "version": "1.0.0",
+  "main": "pathToMain",
+  "scripts": {
+    "apply": "terraform init && terraform fmt && terraform validate && terraform apply",
+    "destroy": "terraform destroy"
+  }
+}

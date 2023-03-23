@@ -7,11 +7,9 @@ output "rds_hostname" {
 output "rds_port" {
   description = "RDS instance port"
   value       = aws_db_instance.terraformdb.port
-  sensitive   = true
 }
 
 output "rds_username" {
   description = "RDS instance root username"
   value       = aws_db_instance.terraformdb.username
-  sensitive   = true
 }

@@ -1,6 +1,6 @@
 variable "environment" {
   type    = string
-  default = "beta-test"
+  default = "beta"
 }
 
 variable "db_password" {
