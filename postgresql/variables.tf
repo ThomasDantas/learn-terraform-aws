@@ -1,6 +1,5 @@
 variable "environment" {
-  type    = string
-  default = "beta"
+  type = string
 }
 
 variable "db_password" {
@@ -10,6 +9,5 @@ variable "db_password" {
 }
 
 variable "region" {
-  default     = "us-east-2"
   description = "AWS region"
 }
